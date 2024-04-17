@@ -43,7 +43,7 @@ if __name__ == '__main__':
     #############Usage:###############
     # pdf_reader.get_pdf_files(isca2019,"isca2019")
     # pdf_reader.read_pdfs("isca2019",keyword)
-    # web_reader.read_papers(hpca2019, keyword, "hpca2019")
+    web_reader.read_papers(hpca2019, keyword, "hpca2019",2)
     # for title in titles:
     #     excel_reader.collect_stats(files,title)
-    excel_reader.collect_stats([files[0]],titles[2])
+    # excel_reader.collect_stats([files[0]],titles[2])

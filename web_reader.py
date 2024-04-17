@@ -1,3 +1,4 @@
+import os
 import time
 
 from selenium import webdriver
@@ -5,6 +6,7 @@ import excel_writer
 
 
 def read_papers(url: str, keyword: str, name: str, start_at: int = 1):
+    if not os.path.exists('papers/'): os.makedirs('papers/')
     output_file = 'papers/'+ name + ".xlsx"
     driver = webdriver.Edge()
     driver.get(url)
