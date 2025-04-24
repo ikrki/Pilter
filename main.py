@@ -19,6 +19,10 @@ asplos2024 = ["https://dblp.uni-trier.de/db/conf/asplos/asplos2024-1.html",
 
 hpca2024 = "https://dblp.uni-trier.de/db/conf/hpca/hpca2024.html"
 
+hpca2025="https://dblp.uni-trier.de/db/conf/hpca/hpca2025.html"
+
+asplos2025=["https://dblp.uni-trier.de/db/conf/asplos/asplos2025-1.html"]
+
 keyword = "simulator"
 
 
@@ -48,12 +52,26 @@ titles = ["使用工具",
           "公司/学校"
           ]
 
+import requests
+
 if __name__ == '__main__':
+    # 2025.4.24:requests.get寄了，加header也不行
+    # url="https://dl.acm.org/doi/pdf/10.1145/3669940.3707248"
+    # headers = {
+    #     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
+    #     'Referer': 'https://dl.acm.org/doi/10.1145/3669940.3707248',
+    #     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+    #     'Accept-Encoding': 'gzip, deflate, br'
+    # }
+    #
+    # response = requests.get(url, headers=headers)
+    # print(response.status_code)   # 403!
+
     #############Usage:###############
-    # pdf_reader.get_pdf_files(asplos2024,"asplos2024")
-    # pdf_reader.read_pdfs("asplos2024",keyword)
-    # web_reader.read_papers(hpca2024, keyword, "hpca2024")
-    for title in titles:
-        excel_reader.collect_stats(files,title)
-    # excel_reader.collect_stats(files,titles[4])
+    # pdf_reader.get_pdf_files(asplos2025,"asplos2025")
+    pdf_reader.read_pdfs("hpca2025",keyword)
+    # web_reader.read_papers(hpca2025, keyword, "hpca2025")
+    # for title in titles:
+        # excel_reader.collect_stats(files,title)
+    # excel_reader.collect_stats(files,titles[0])
     pass
